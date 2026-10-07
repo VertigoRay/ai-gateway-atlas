@@ -1,0 +1,13 @@
+---
+layout: reference
+title: Integration reference
+lead: Your tools and model connections, with their credential requirements.
+section: services
+---
+{% include permissions.html %}
+<div class="section-label" id="tools"><h2>Tools</h2><span>Hostnames match the provisioning configuration</span></div>
+{% for service in site.data.reference.services %}{% include service.html service=service %}{% endfor %}
+<div class="section-label" id="access"><h2>Tool access</h2><span>Machine identities and approved connections</span></div>
+{% for service in site.data.reference.connections %}{% include service.html service=service %}{% endfor %}
+<div class="section-label" id="models"><h2>Models</h2><span>Configured in source · No live status checks</span></div>
+{% for service in site.data.reference.models %}{% include service.html service=service %}{% endfor %}

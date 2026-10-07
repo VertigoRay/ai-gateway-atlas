@@ -1,0 +1,18 @@
+name: Build Atlas
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Render fictional configuration
+        run: |
+          python3 scripts/build_reference.py --input-directory docs/reference/demo --output-directory dist --revision "$GITHUB_SHA"
+          python3 scripts/build_reference.py --input-directory docs/reference/demo --output-directory dist --check
+      - name: Audit build dependencies
+        run: python3 scripts/build_reference.py --audit

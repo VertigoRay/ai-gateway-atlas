@@ -1,0 +1,7 @@
+<details class="{% if include.service.kind == 'example' %}example{% else %}service{% endif %}" id="{{ include.service.id | escape }}">
+  <summary><span class="chevron" aria-hidden="true"></span><div class="summary-text"><div class="summary-title">{{ include.service.name | escape }}</div><div class="summary-sub">{{ include.service.subtitle | escape }}</div></div>{% for tag in include.service.tags %}<span class="pill" data-service-tag="{{ tag | escape }}">#{{ tag | escape }}</span>{% endfor %}<span class="pill">{{ include.service.badge | escape }}</span></summary>
+  <div class="content">{% if include.service.credential_access %}<p class="schema-note" data-credential-access="{{ include.service.id | escape }}" data-credential-owner="{{ include.service.credential_access.owner | escape }}">{{ include.service.credential_access.note | escape }}</p>{% endif %}<p class="schema-note">{{ include.service.note | escape }}</p>
+    <table class="fields" aria-label="{{ include.service.name | escape }} {{ include.service.table_purpose }}"><thead><tr><th scope="col">{{ include.service.table_label }}</th><th scope="col">{{ include.service.middle_label }}</th><th scope="col">{{ include.service.value_label }}</th></tr></thead><tbody>{% for field in include.service.fields %}{% include field.html field=field %}{% endfor %}</tbody></table>
+    <div class="rules"><ul>{% for rule in include.service.rules %}<li>{{ rule | escape }}</li>{% endfor %}</ul></div>
+  </div>
+</details>

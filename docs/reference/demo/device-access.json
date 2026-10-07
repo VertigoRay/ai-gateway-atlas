@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "updated": "2026-01-01",
+  "devices": [{"hostname": "EXAMPLE-LAPTOP", "identity": "example-device", "owner": "example-operator", "group": "example-devices", "status": "Example only · Not enrolled", "note": "Fictional device illustrating the reference layout. This grants no access.", "models": "Off by default"}]
+}

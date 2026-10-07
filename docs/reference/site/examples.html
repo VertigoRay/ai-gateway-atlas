@@ -1,0 +1,8 @@
+---
+layout: reference
+title: Credential examples
+lead: Generic layouts to help you fill in Bitwarden. Each service's reference gives its exact requirements.
+section: examples
+---
+<div class="section-label" id="patterns"><h2>Credential layouts</h2><span>Examples only · No production connections</span></div>
+{% for service in site.data.reference.examples %}{% include service.html service=service %}{% endfor %}

@@ -1,0 +1,6 @@
+dist/
+_site/
+__pycache__/
+*.pyc
+.private/
+.env

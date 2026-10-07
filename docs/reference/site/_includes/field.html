@@ -1,0 +1,5 @@
+<tr>
+  <td><span class="location">{{ include.field.location | escape }}</span><div class="copy-row"><div class="field-name">{{ include.field.name | escape }}</div>{% if include.field.location == 'Custom field' %}{% include copy-button.html value=include.field.name purpose='field name' %}{% endif %}</div><span class="type">{{ include.field.type | escape }}</span><span class="required">{% if include.field.required %}Required{% else %}Optional{% endif %}</span></td>
+  <td><div class="meaning">{{ include.field.label | escape }}</div><div class="help">{{ include.field.description | escape }}</div></td>
+  <td>{% include value.html value=include.field.example %}{% for note in include.field.format_notes %}<div class="format">{{ note | escape }}</div>{% endfor %}{% for alternative in include.field.alternatives %}<div class="format">Another profile:</div>{% include value.html value=alternative %}{% endfor %}</td>
+</tr>

@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "broker": "Example Broker",
+  "organization": "Example AI",
+  "collection": "Example Shared",
+  "status": "Configuration reference",
+  "services": [
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "kind": "service",
+      "hostname": "EXAMPLE-ADAPTERS",
+      "summary": "Fictional configuration for demonstration.",
+      "note": "Example data only; no real infrastructure, credentials or grants.",
+      "fields": [
+        {
+          "location": "Custom field",
+          "name": "V-AI-Broker",
+          "label": "Exact adapter hostname",
+          "description": "Exact adapter hostname",
+          "type": "Text",
+          "required": true,
+          "secret": false,
+          "example": "EXAMPLE-ADAPTERS",
+          "exact": "EXAMPLE-ADAPTERS"
+        },
+        {
+          "location": "Custom field",
+          "name": "V-AI-Broker-Profile",
+          "label": "Approved connection profile",
+          "description": "Approved connection profile",
+          "type": "Text",
+          "required": true,
+          "secret": false,
+          "example": "servicenow-example",
+          "exact": "servicenow-example"
+        },
+        {
+          "location": "Login field",
+          "name": "Username",
+          "label": "Service account username",
+          "description": "Service account username",
+          "type": "Text",
+          "required": true,
+          "secret": true,
+          "example": "<service account username>"
+        },
+        {
+          "location": "Login field",
+          "name": "Password",
+          "label": "Service account password",
+          "description": "Service account password",
+          "type": "Password",
+          "required": true,
+          "secret": true,
+          "example": "<service account password>"
+        },
+        {
+          "location": "Login field",
+          "name": "URI 1",
+          "label": "Instance URL",
+          "description": "Instance URL",
+          "type": "Text",
+          "required": true,
+          "secret": false,
+          "example": "https://your-instance.service-now.com",
+          "format": "HTTPS instance root URL; no credentials or API path."
+        }
+      ],
+      "rules": [
+        "Edit the vault item, never put credential values in the documentation."
+      ]
+    },
+    {
+      "id": "cortex",
+      "name": "Cortex",
+      "kind": "service",
+      "hostname": "EXAMPLE-ADAPTERS",
+      "summary": "Fictional configuration for demonstration.",
+      "note": "Example data only; no real infrastructure, credentials or grants.",
+      "fields": [
+        {
+          "location": "Custom field",
+          "name": "V-AI-Broker",
+          "label": "Exact adapter hostname",
+          "description": "Exact adapter hostname",
+          "type": "Text",
+          "required": true,
+          "secret": false,
+          "example": "EXAMPLE-ADAPTERS",
+          "exact": "EXAMPLE-ADAPTERS"
+        },
+        {
+          "location": "Custom field",
+          "name": "V-AI-Broker-Profile",
+          "label": "Approved connection profile",
+          "description": "Approved connection profile",
+          "type": "Text",
+          "required": true,
+          "secret": false,
+          "example": "cortex-example",
+          "exact": "cortex-example"
+        },
+        {
+          "location": "Login field",
+          "name": "Username",
+          "label": "API key ID",
+          "description": "API key ID",
+          "type": "Text",
+          "required": true,
+          "secret": true,
+          "example": "<API key ID>"
+        },
+        {
+          "location": "Login field",
+          "name": "Password",
+          "label": "API key",
+          "description": "API key",
+          "type": "Password",
+          "required": true,
+          "secret": true,
+          "example": "<API key>"
+        }
+      ],
+      "rules": [
+        "Edit the vault item, never put credential values in the documentation."
+      ]
+    },
+    {
+      "id": "username-password-example",
+      "name": "Username + password",
+      "kind": "example",
+      "summary": "Generic credential layout.",
+      "note": "Example only; use the exact field requirements of the real integration.",
+      "fields": [
+        {
+          "location": "Login field",
+          "name": "Username",
+          "label": "Service account username",
+          "description": "Service account username",
+          "type": "Text",
+          "required": true,
+          "secret": true,
+          "example": "<service account username>"
+        },
+        {
+          "location": "Login field",
+          "name": "Password",
+          "label": "Service account password",
+          "description": "Service account password",
+          "type": "Password",
+          "required": true,
+          "secret": true,
+          "example": "<service account password>"
+        }
+      ],
+      "rules": [
+        "Only placeholders appear in the reference."
+      ]
+    },
+    {
+      "id": "api-key-example",
+      "name": "API key only",
+      "kind": "example",
+      "summary": "Generic credential layout.",
+      "note": "Example only; use the exact field requirements of the real integration.",
+      "fields": [
+        {
+          "location": "Login field",
+          "name": "Username",
+          "label": "Unused; can be left blank",
+          "description": "Unused; can be left blank",
+          "type": "Text",
+          "required": false,
+          "secret": false,
+          "example": ""
+        },
+        {
+          "location": "Login field",
+          "name": "Password",
+          "label": "API key",
+          "description": "API key",
+          "type": "Password",
+          "required": true,
+          "secret": true,
+          "example": "<API key>"
+        }
+      ],
+      "rules": [
+        "Only placeholders appear in the reference."
+      ]
+    },
+    {
+      "id": "key-secret-example",
+      "name": "API key + secret",
+      "kind": "example",
+      "summary": "Generic credential layout.",
+      "note": "Example only; use the exact field requirements of the real integration.",
+      "fields": [
+        {
+          "location": "Login field",
+          "name": "Username",
+          "label": "API key or client ID",
+          "description": "API key or client ID",
+          "type": "Text",
+          "required": true,
+          "secret": true,
+          "example": "<API key or client ID>"
+        },
+        {
+          "location": "Login field",
+          "name": "Password",
+          "label": "API secret",
+          "description": "API secret",
+          "type": "Password",
+          "required": true,
+          "secret": true,
+          "example": "<API secret>"
+        }
+      ],
+      "rules": [
+        "Only placeholders appear in the reference."
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "portkey",
+      "name": "Portkey Gateway",
+      "kind": "model",
+      "summary": "Model routing through Portkey.",
+      "note": "Fictional route. Native Portkey administration remains in Portkey; this page documents the configuration.",
+      "fields": [
+        {
+          "location": "Connection setting",
+          "name": "API base URL",
+          "label": "Model gateway URL",
+          "description": "Model gateway URL",
+          "type": "Text",
+          "required": true,
+          "secret": false,
+          "example": "https://gateway.example.com/v1"
+        }
+      ],
+      "rules": [
+        "Gateway key values are never included in a static site."
+      ]
+    },
+    {
+      "id": "cliproxyapi",
+      "name": "CLIProxyAPI OAuth bridge",
+      "kind": "connection",
+      "summary": "OAuth-backed model connection.",
+      "note": "Sign-in and token refresh are managed by CLIProxyAPI; this page never exports tokens.",
+      "fields": [
+        {
+          "location": "Connection setting",
+          "name": "Authentication",
+          "label": "OAuth session owner",
+          "description": "OAuth session owner",
+          "type": "Text",
+          "required": true,
+          "secret": false,
+          "example": "<OAuth account owner>"
+        }
+      ],
+      "rules": [
+        "Only an approved bridge can read its stored OAuth tokens."
+      ]
+    }
+  ],
+  "connections": []
+}

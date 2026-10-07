@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "brand": "AI Gateway Atlas",
+  "brand_mark": "A",
+  "eyebrow": "EXAMPLE ENVIRONMENT \u00b7 CONNECTION GUIDE",
+  "monitoring_url": "https://monitoring.example.com",
+  "monitoring_label": "Netdata",
+  "permissions_note": "The fictional Team category selects shared tools. An Owner-Only label describes personal credentials; the separate credential-owner restriction enforces access. This example illustrates a custom broker policy, not Portkey-native RBAC.",
+  "domain_template_prefix": "",
+  "setup_url": "",
+  "monitoring_links": [
+    {
+      "label": "Overview",
+      "url": "https://monitoring.example.com"
+    },
+    {
+      "label": "Alerts",
+      "url": "https://monitoring.example.com/alerts"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Build in a disposable staging directory; never point Jekyll at the served tree.
+safe: true
+disable_disk_cache: true
+strict_front_matter: true
+plugins: []
+whitelist: []
+encoding: utf-8
+timezone: UTC
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Dockerfile
+liquid:
+  error_mode: strict
+  strict_filters: true

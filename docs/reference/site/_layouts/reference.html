@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="reference-generated-at" content="{{ site.data.reference.provenance.generated_at | escape }}">
+  <meta name="reference-revision" content="{{ site.data.reference.provenance.revision | escape }}">
+  <meta name="reference-source-sha256" content="{{ site.data.reference.provenance.source_sha256 | escape }}">
+  {% for input in site.data.reference.input_hashes %}<meta name="source-input-{{ input[0] | escape }}" content="{{ input[1] }}">{% endfor %}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-{{ site.data.reference.script_hash }}'; style-src 'unsafe-inline'; img-src data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>{{ page.title | escape }} · {{ site.data.reference.presentation.brand | escape }}</title>
+  <style>{{ site.data.reference.css }}</style>
+</head>
+<body data-domain-template-prefix="{{ site.data.reference.presentation.domain_template_prefix | escape }}">
+  <header class="topbar"><a href="index.html" class="brand"><span class="mark" aria-hidden="true">{{ site.data.reference.presentation.brand_mark | escape }}</span> {{ site.data.reference.presentation.brand | escape }}</a><span class="badge">Credential reference</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">{{ site.data.reference.presentation.eyebrow | escape }}</p><h1>{{ page.title | escape }}</h1><p class="lead">{{ page.lead | escape }}</p></div>
+    <nav class="page-tabs" aria-label="Reference pages"><a href="index.html"{% if page.section == 'services' %} aria-current="page"{% endif %}>Services</a><a href="examples.html"{% if page.section == 'examples' %} aria-current="page"{% endif %}>Examples</a><a href="index.html#permissions">Permissions</a>{% if site.data.reference.presentation.setup_url != empty %}<a href="{{ site.data.reference.presentation.setup_url | escape }}">Device setup</a>{% endif %}<a href="{{ site.data.reference.presentation.monitoring_url | escape }}">{{ site.data.reference.presentation.monitoring_label | escape }} ↗</a></nav>
+    <aside class="vault-note"><strong>Bitwarden credentials belong in the {{ site.data.reference.organization | escape }} organization → {{ site.data.reference.collection | escape }}</strong><span>This page contains field instructions and connection references. OAuth sign-ins remain managed by the bridge.</span></aside>
+    <p class="copy-help">Use the copy icons for Vaultwarden field names and values. Hover for details; replace example parts in URL templates before saving.</p>
+    <p class="schema-note">Generated from the configured service catalog, gateway access policy and device records. Portkey connections and custom broker access policy are documented separately from Portkey’s native administration. This is a configuration reference, not a live health check. See <a href="{{ site.data.reference.presentation.monitoring_url | escape }}">{{ site.data.reference.presentation.monitoring_label | escape }} for monitoring and health</a>.</p>
+    <nav class="monitoring-links" aria-label="Monitoring views"><span>Netdata:</span>{% for link in site.data.reference.monitoring_links %}<a href="{{ link.url | escape }}">{{ link.label | escape }} ↗</a>{% endfor %}</nav>
+    <p id="copy-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+    {{ content }}
+    <footer><span>Static reference · Edit credentials in Bitwarden<br>Generated <time datetime="{{ site.data.reference.provenance.generated_at | escape }}">{{ site.data.reference.provenance.generated_at | escape }}</time></span><span>Revision <code>{{ site.data.reference.provenance.revision | escape }}</code><br><abbr title="SHA-256 of the configuration and template source files">Source</abbr> <code>{{ site.data.reference.provenance.source_sha256 | slice: 0, 12 }}</code></span></footer>
+  </main>
+  <script>{{ site.data.reference.copy_script }}</script>
+</body>
+</html>

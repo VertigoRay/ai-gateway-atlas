@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "owners": {"example-operator": {"label": "Example Operator"}},
+  "groups": {"example-devices": {"label": "Example Operator's devices", "owner": "example-operator", "allow_tags": ["Team"]}},
+  "service_tags": {"servicenow": ["Team", "Owner-Only"], "cortex": ["Team"]},
+  "service_access": {"servicenow": {"owner": "example-operator", "allow_groups": ["example-devices"], "allow_clients": []}}
+}
